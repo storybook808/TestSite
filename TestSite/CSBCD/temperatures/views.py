@@ -1,5 +1,7 @@
 from django.shortcuts import render
-import json
+from django.http import HttpResponse
+from .models import Temperature
+import simplejson
 
 def chart_data_json(request):
     data = {}
