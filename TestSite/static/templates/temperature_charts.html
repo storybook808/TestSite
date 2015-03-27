@@ -1,6 +1,7 @@
 <script type="text/javascript">
-$.get("{% url 'chart_data_json' %}",
+    $.get("{% url 'chart_data_json' %}",
     function (data) {
+        document.write(5);
         $('#temperature').highcharts({
             chart: {
                 type: 'line'
@@ -12,7 +13,6 @@ $.get("{% url 'chart_data_json' %}",
                 text: 'Source: WorldClimate.com'
             },
             xAxis: {
-                categories : data['chart_data']['dates']
             },
             yAxis: {
                 min: 0,
@@ -32,9 +32,12 @@ $.get("{% url 'chart_data_json' %}",
                 column: {
                     pointPadding: 0.2,
                     borderWidth: 0
-                }
+                }`
             },
-            series: [{}]
+            series: [{
+                name: 'TempF',
+                data: 
+            }]
         });
     });
 </script>
